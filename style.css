@@ -1,0 +1,150 @@
+body {
+  background-color: ivory;
+  color: #333333;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Logo */
+.logo {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 0 auto;
+  transition: max-width 0.3s ease;
+}
+
+/* Header */
+.softstep-header {
+  padding: 4px 10px;
+  text-align: center;
+  background: linear-gradient(180deg, #fadadd 0%, #faf0e6 40%, #f6f1e7 100%);
+}
+
+.section-space {
+  height: 80px;
+}
+
+/* Notebook layout */
+.notebook-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.notebook-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-shrink: 0; /* keeps row from collapsing */
+}
+
+.notebook-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  transition: box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* NEW: let flexbox auto-match heights */
+  flex: 1;
+}
+
+/* Notebook text readability */
+.notebook-card p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #444;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/* Notebook image */
+.notebook-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Clickable card */
+.notebook-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.coming-soon {
+  opacity: 0.85;
+}
+
+.coming-soon:hover {
+  opacity: 1;
+}
+
+.notebook-link:hover .notebook-card {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
+.softstep-footer {
+  text-align: center;
+  padding: 30px 10px;
+  background: linear-gradient(180deg, #f6f1e7 0%, #faf0e6 100%);
+  color: #333;
+  font-family: "Cormorant Garamond", serif;
+  margin-top: 60px;
+}
+
+.footer-socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.footer-contact,
+.footer-brand,
+.footer-copy {
+  margin: 8px 0;
+  font-size: 14px;
+}
+/* Responsive logo */
+@media (max-width: 600px) {
+  .logo {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    max-width: 180px;
+  }
+}
+
+/* Notebook responsive layout */
+@media (max-width: 900px) {
+  .notebook-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .notebook-card {
+    width: 90%;
+    max-width: 360px;
+  }
+}
