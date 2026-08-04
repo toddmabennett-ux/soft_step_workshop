@@ -4,20 +4,49 @@ body {
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Logo */
 .logo {
-  width: 100%;
-  max-width: 240px;
+  max-width: 400px;
   height: auto;
-  margin: 0 auto;
-  transition: max-width 0.3s ease;
+  display: block;
+  margin-top: -35px;
+  margin-bottom: -75px;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
 }
 
-/* Header */
 .softstep-header {
-  padding: 4px 10px;
-  text-align: center;
+  padding: 0;
+  margin: 0;
   background: linear-gradient(180deg, #fadadd 0%, #faf0e6 40%, #f6f1e7 100%);
+  width: 100%;
+}
+
+.header-container {
+  max-width: none;
+  width: 100%;
+  padding: 0 40px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-card a {
+  background: #f4efe8;
+  padding: 8px 18px; /* Slightly larger padding for a better click target */
+  border-radius: 6px;
+  font-size: 1.1rem; /* Increased from 0.9rem to balance out the large logo */
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  letter-spacing: 0.05em; /* Gives it a high-end editorial feel */
+  transition: all 0.2s ease;
+}
+
+.header-card a:hover {
+  opacity: 0.8;
+  background: #ebe4da; /* Subtle color shift on hover */
 }
 
 .section-space {
@@ -29,21 +58,23 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 40px 0 80px 0;
 }
-
 .notebook-row {
   display: flex;
   justify-content: center;
+  align-items: stretch; /* Forces equal heights perfectly */
   gap: 40px;
-  flex-shrink: 0; /* keeps row from collapsing */
+  max-width: 1020px; /* Binds the overall maximum grid width */
+  width: 100%;
+  margin: 0 auto; /* Centers the whole row under the header */
 }
 
 .notebook-card {
   background-color: white;
   border-radius: 20px;
   padding: 30px;
-  width: 300px;
+  width: 100%; /* Spreads the white card out to fill the 300px link container */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
   text-align: center;
   font-family: "Cormorant Garamond", serif;
@@ -52,9 +83,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* NEW: let flexbox auto-match heights */
-  flex: 1;
+  height: 100%; /* Tells the card background to stretch to the maximum height */
 }
 
 /* Notebook text readability */
@@ -70,8 +99,9 @@ body {
 /* Notebook image */
 .notebook-image {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: 320px; /* Forces all three images to be the exact same height */
+  object-fit: cover; /* Prevents the images from stretching or distortion */
+  object-position: top;
   border-radius: 16px;
   margin-bottom: 15px;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
@@ -80,11 +110,11 @@ body {
     box-shadow 0.3s ease;
 }
 
-/* Clickable card */
 .notebook-link {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex; /* Passes the structural height down to the card */
+  width: 300px; /* LOCKS each column's physical desktop width so they cannot squash */
 }
 .coming-soon {
   opacity: 0.85;
@@ -95,8 +125,8 @@ body {
 }
 
 .notebook-link:hover .notebook-card {
-  transform: translateY(-4px);
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.25);
+  transform: translateY(-8px); /* Lifts the card up slightly */
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15); /* Softens and deepens the shadow */
 }
 
 /* Footer */
