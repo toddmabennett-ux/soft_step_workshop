@@ -56,7 +56,7 @@ body {
   margin: 40px 0 80px 0;
 }
 
-/* Floating, Sticky Capsule Banner Track Block */
+/* Floating Capsule Banner Track Block (Unstuck Version) */
 .section-space {
   max-width: 940px;
   width: calc(100% - 80px);
@@ -69,10 +69,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* STICKY CONFIGURATION: Floating runway tracking mechanics */
-  position: sticky;
-  top: 115px; /* Safely clears your large main header logo graphic frame when scrolling */
-  z-index: 999;
+  /* CHANGED HERE: Restored to regular positioning flow */
+  position: relative;
+  top: auto;
+  z-index: 10;
 }
 
 /* Full Width Button Anchor Link Zone */
