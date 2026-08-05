@@ -153,15 +153,20 @@ body {
   font-size: 14px;
 }
 /* Responsive logo */
+/* Responsive logo for small screens */
 @media (max-width: 600px) {
   .logo {
-    max-width: 300px;
+    max-width: 260px; /* Shrinks the image width so it fits mobile screens */
+    margin-top: -20px; /* Tweaked negative margins so it doesn't bleed out */
+    margin-bottom: -45px;
   }
 }
 
 @media (max-width: 400px) {
   .logo {
-    max-width: 180px;
+    max-width: 190px; /* Extra shrinkage for small devices like an iPhone SE */
+    margin-top: -15px;
+    margin-bottom: -30px;
   }
 }
 
