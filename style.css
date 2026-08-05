@@ -51,26 +51,18 @@ body {
 .notebook-section {
   width: 100%;
   display: flex;
-  flex-direction: column; /* Vertical stack forces the pill button ABOVE the card row grid */
+  flex-direction: column;
   align-items: center;
   margin: 40px 0 80px 0;
-  overflow-x: hidden;
-}
-.notebook-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 20px; /* Gives nice spacing above the text/price */
-  border-radius: 10px; /* Optional: rounds image corners to match your card aesthetic */
 }
 
 /* Floating Capsule Banner Track Block (Unstuck & Mobile Fixed) */
 .section-space {
   max-width: 940px;
-  width: 90%; /* Use a safe percentage instead of a hard pixel subtraction calculation */
-  margin: 20px auto 40px auto; /* Spacious bottom margin to separate pill from cards */
+  width: 90%;
+  margin: 20px auto 40px auto;
   background: #ffffff;
-  border-radius: 50px; /* Perfectly round pill capsule shape edges */
+  border-radius: 50px;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
@@ -79,7 +71,7 @@ body {
   position: relative;
   top: auto;
   z-index: 10;
-  box-sizing: border-box; /* Force padding to stay contained inside the element container boundaries */
+  box-sizing: border-box;
 }
 
 /* Full Width Button Anchor Link Zone */
@@ -129,7 +121,7 @@ body {
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 500;
-  color: #7fa475; /* Sage Green matching artwork vector paths */
+  color: #7fa475;
   font-family: "Cormorant Garamond", serif;
 }
 
@@ -137,7 +129,7 @@ body {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: #dfb26c; /* Warm Golden Accent */
+  color: #dfb26c;
   margin-top: 2px;
 }
 
@@ -150,8 +142,8 @@ body {
   max-width: 1020px;
   width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap; /* FIXED: Crucial rule that allows cards to wrap safely below when screen narrows */
-  padding: 0 20px; /* Safety padding so cards don't touch screen edges */
+  flex-wrap: wrap; /* Allows row rows to drop cleanly when squeezed */
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -159,8 +151,9 @@ body {
   text-decoration: none;
   color: inherit;
   display: flex;
-  flex: 1 1 300px; /* FIXED: Responsive base growth sizing instead of a hard pixel lock */
-  max-width: 300px; /* FIXED: Prevents cards from growing giant on wide columns */
+  width: 100%;
+  max-width: 300px; /* Constrains the max horizontal footprint of the row item */
+  box-sizing: border-box;
 }
 
 .notebook-card {
@@ -179,6 +172,7 @@ body {
   align-items: center;
   height: 100%;
   box-sizing: border-box;
+  overflow: hidden; /* Prevents raw unscaled image data from spilling out */
 }
 
 .notebook-link:hover .notebook-card {
@@ -186,10 +180,21 @@ body {
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
 }
 
+/* FIXED: Rigidly forces the book graphics to stay bound inside their individual cards */
+.notebook-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 20px;
+}
+
 .notebook-card p {
   line-height: 1.6;
   font-size: 15px;
-  color: #333333; /* FIXED: Patched the incomplete syntax error broken hash block */
+  color: #333333;
+  margin-top: auto; /* Pushes card text group uniformly below images */
 }
 
 /* Footer Section */
