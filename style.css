@@ -6,11 +6,6 @@ body {
   margin: 0;
   padding: 0;
 }
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 /* Master Sticky Header Layout */
 .logo {
@@ -59,6 +54,7 @@ body {
   flex-direction: column; /* Vertical stack forces the pill button ABOVE the card row grid */
   align-items: center;
   margin: 40px 0 80px 0;
+  overflow-x: hidden;
 }
 .notebook-image {
   max-width: 100%;
