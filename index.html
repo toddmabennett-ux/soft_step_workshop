@@ -9,34 +9,47 @@
   </head>
 
   <body>
- <header class="softstep-header">
-  <div class="header-container">
-    <div class="logo-area">
-      <img
-        src="assets/softsteplogo2.png"
-        alt="Soft Step Workshop Logo"
-        class="logo"
-      />
-    </div>
+    <!-- Sticky Navigation Header -->
+    <header class="softstep-header">
+      <div class="header-container">
+        
+        <!-- Left Side: Main Logo -->
+        <div class="logo-area">
+          <img
+            src="assets/softsteplogo2.png"
+            alt="Soft Step Workshop Logo"
+            class="logo"
+          />
+        </div>
 
-    <div class="header-card">
-      <a href="/studio">Studio</a>
-    </div>
-  </div>
-</header>
+        <!-- Right Side: Navigation Links Group (Maintained for layout balance) -->
+        <div class="header-nav-links"></div>
 
+      </div>
+    </header>
 
-   
-
-
-    <div class="section-space"></div>
-
+    <!-- Main Workspace Section Wrapper -->
     <div class="notebook-section">
+      
+      <!-- Floating Sticky Design Services Capsule Button -->
+      <div class="section-space">
+        <a href="/services" class="nav-btn-design">
+          <div class="nav-motif-crop">
+            <img src="assets/softsteplogo2.png" alt="Mountain Motif" class="nav-motif-img" />
+          </div>
+          <div class="nav-design-text">
+            <span class="nav-design-title">Web & Logo</span>
+            <span class="nav-design-subtitle">DESIGN SERVICES</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Product Cards Flex Grid Row -->
       <div class="notebook-row">
 
         <!-- Notebook 1 -->
         <a
-          href="https://www.amazon.co.uk/dp/B0HB9S38XX?tag=softstepworks-21"
+          href="https://amazon.co.uk"
           class="notebook-link"
           target="_blank"
         >
@@ -46,9 +59,7 @@
               alt="Notebook One"
               class="notebook-image"
             />
-
             <p class="price">£7.19 inc. VAT</p>
-
             <p>
               This beautifully designed, minimalist notebook features the
               encouraging theme text from Matthew 5:3 on its cover, paired with
@@ -64,7 +75,7 @@
 
         <!-- Notebook 2 -->
         <a
-          href="https://www.amazon.co.uk/dp/B0HB74JHD2?tag=softstepworks-21"
+          href="https://amazon.co.uk"
           class="notebook-link"
           target="_blank"
         >
@@ -74,9 +85,7 @@
               alt="Daily Blessings Notebook"
               class="notebook-image"
             />
-
             <p class="price">£7.19 inc. VAT</p>
-
             <p>
               This beautifully designed notebook features a radiant, peaceful
               leaf design with the elegant title Daily Blessings on its cover.
@@ -89,6 +98,7 @@
             </p>
           </div>
         </a>
+
         <!-- Coming Soon -->
         <a href="#" class="notebook-link">
           <div class="notebook-card coming-soon">
@@ -97,26 +107,26 @@
               alt="Coming Soon Notebook"
               class="notebook-image"
             />
-
             <p>
               A new Soft Step Workshop notebook is on the way. Thoughtfully
               designed, spiritually uplifting, and crafted with the same calm,
               elegant aesthetic you love. Check back soon for updates.
             </p>
           </div>
-        </a> <!-- ADD THIS CLOSING TAG RIGHT HERE -->
+        </a>
 
       </div>
     </div>
     
+    <!-- Footer Section -->
     <footer class="softstep-footer">
       <p>Soft Step Workshop • Est. 2026</p>
-
-
-
       <p class="affiliate-disclaimer">
         Some links on this site are Amazon affiliate links. If you buy through
         them, Soft Step Workshop may earn a small commission at no extra cost
         to you.
       </p>
+    </footer>
 
+  </body>
+</html>

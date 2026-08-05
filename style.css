@@ -1,9 +1,13 @@
+/* Base Layout Resets */
 body {
   background-color: ivory;
   color: #333333;
   font-family: "Cormorant Garamond", serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* Master Sticky Header Layout */
 .logo {
   max-width: 400px;
   height: auto;
@@ -11,6 +15,7 @@ body {
   margin-top: -35px;
   margin-bottom: -75px;
 }
+
 .logo-area {
   display: flex;
   align-items: center;
@@ -21,72 +26,154 @@ body {
   margin: 0;
   background: linear-gradient(180deg, #fadadd 0%, #faf0e6 40%, #f6f1e7 100%);
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-container {
   max-width: none;
   width: 100%;
-  padding: 0 40px 0 0;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-card a {
-  background: #f4efe8;
-  padding: 8px 18px; /* Slightly larger padding for a better click target */
-  border-radius: 6px;
-  font-size: 1.1rem; /* Increased from 0.9rem to balance out the large logo */
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  letter-spacing: 0.05em; /* Gives it a high-end editorial feel */
-  transition: all 0.2s ease;
+.header-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 40px;
 }
 
-.header-card a:hover {
-  opacity: 0.8;
-  background: #ebe4da; /* Subtle color shift on hover */
-}
-
-.section-space {
-  height: 80px;
-}
-
-/* Notebook layout */
+/* Notebook layout Section Flex System */
 .notebook-section {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Vertical stack forces the pill button ABOVE the card row grid */
+  align-items: center;
   margin: 40px 0 80px 0;
 }
+
+/* Floating, Sticky Capsule Banner Track Block */
+.section-space {
+  max-width: 940px;
+  width: calc(100% - 80px);
+  margin: 20px auto 40px auto; /* Spacious bottom margin to separate pill from cards */
+  background: #ffffff;
+  border-radius: 50px; /* Perfectly round pill capsule shape edges */
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* STICKY CONFIGURATION: Floating runway tracking mechanics */
+  position: sticky;
+  top: 115px; /* Safely clears your large main header logo graphic frame when scrolling */
+  z-index: 999;
+}
+
+/* Full Width Button Anchor Link Zone */
+.nav-btn-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 85px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn-design:hover {
+  background-color: #fafbf9;
+}
+
+/* Cookie Cutter circular crop tool layer */
+.nav-motif-crop {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #faf0e6;
+}
+
+.nav-motif-img {
+  width: 140%;
+  height: auto;
+  transform: translateY(-3px);
+}
+
+/* Typography Stack Alignment rules */
+.nav-design-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.nav-design-title {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #7fa475; /* Sage Green matching artwork vector paths */
+  font-family: "Cormorant Garamond", serif;
+}
+
+.nav-design-subtitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #dfb26c; /* Warm Golden Accent */
+  margin-top: 2px;
+}
+
+/* Product Cards Grid Structure Layout */
 .notebook-row {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Forces equal heights perfectly */
+  align-items: stretch;
   gap: 40px;
-  max-width: 1020px; /* Binds the overall maximum grid width */
+  max-width: 1020px;
   width: 100%;
-  margin: 0 auto; /* Centers the whole row under the header */
+  margin: 0 auto;
+}
+
+.notebook-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 300px;
 }
 
 .notebook-card {
   background-color: white;
   border-radius: 20px;
   padding: 30px;
-  width: 100%; /* Spreads the white card out to fill the 300px link container */
+  width: 100%;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
   text-align: center;
   font-family: "Cormorant Garamond", serif;
-  transition: box-shadow 0.3s ease;
-
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%; /* Tells the card background to stretch to the maximum height */
+  height: 100%;
 }
 
-/* Notebook text readability */
+.notebook-link:hover .notebook-card {
+  transform: translateY(-8px);
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
+}
+
 .notebook-card p {
   line-height: 1.6;
   font-size: 15px;
@@ -96,26 +183,21 @@ body {
   margin-top: 10px;
 }
 
-/* Notebook image */
+.notebook-card .price {
+  font-weight: 600;
+  color: #333;
+}
+
 .notebook-image {
   width: 100%;
-  height: 320px; /* Forces all three images to be the exact same height */
-  object-fit: cover; /* Prevents the images from stretching or distortion */
+  height: 320px;
+  object-fit: cover;
   object-position: top;
   border-radius: 16px;
   margin-bottom: 15px;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
-.notebook-link {
-  text-decoration: none;
-  color: inherit;
-  display: flex; /* Passes the structural height down to the card */
-  width: 300px; /* LOCKS each column's physical desktop width so they cannot squash */
-}
 .coming-soon {
   opacity: 0.85;
 }
@@ -124,12 +206,7 @@ body {
   opacity: 1;
 }
 
-.notebook-link:hover .notebook-card {
-  transform: translateY(-8px); /* Lifts the card up slightly */
-  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15); /* Softens and deepens the shadow */
-}
-
-/* Footer */
+/* Layout Footer Element rules */
 .softstep-footer {
   text-align: center;
   padding: 30px 10px;
@@ -152,25 +229,32 @@ body {
   margin: 8px 0;
   font-size: 14px;
 }
-/* Responsive logo */
-/* Responsive logo for small screens */
+
+.affiliate-disclaimer {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Media Breakpoints layout blocks */
 @media (max-width: 600px) {
   .logo {
-    max-width: 260px; /* Shrinks the image width so it fits mobile screens */
-    margin-top: -20px; /* Tweaked negative margins so it doesn't bleed out */
+    max-width: 260px;
+    margin-top: -20px;
     margin-bottom: -45px;
   }
 }
 
 @media (max-width: 400px) {
   .logo {
-    max-width: 190px; /* Extra shrinkage for small devices like an iPhone SE */
+    max-width: 190px;
     margin-top: -15px;
     margin-bottom: -30px;
   }
 }
 
-/* Notebook responsive layout */
 @media (max-width: 900px) {
   .notebook-row {
     flex-direction: column;
@@ -178,7 +262,7 @@ body {
     gap: 60px;
   }
 
-  .notebook-card {
+  .notebook-link {
     width: 90%;
     max-width: 360px;
   }
