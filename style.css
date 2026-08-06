@@ -197,6 +197,22 @@ body {
   margin-top: auto; /* Pushes card text group uniformly below images */
 }
 
+.footer-instagram {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.insta-icon {
+  width: 40px;
+  height: 40px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.insta-icon:hover {
+  opacity: 1;
+}
+
 /* Footer Section */
 .softstep-footer {
   text-align: center;
@@ -211,4 +227,131 @@ body {
   max-width: 600px;
   margin: 10px auto 0 auto;
   line-height: 1.4;
+}
+.article-block {
+  max-width: 940px;
+  width: 90%;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  margin: 30px auto;
+  box-sizing: border-box;
+}
+
+.article-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #7fa475;
+  margin-bottom: 15px;
+}
+
+.article-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333333;
+}
+/* Pyramid Grid */
+.portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 30px;
+}
+
+/* Each row */
+.portfolio-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual card */
+.portfolio-item {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 240px; /* slightly bigger */
+  text-align: center;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* Hover lift */
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Image */
+.pyr-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+/* Image hover grow */
+.portfolio-item:hover .pyr-img {
+  transform: scale(1.03);
+}
+
+/* Title */
+.pyr-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #7fa475;
+  margin: 0;
+}
+.portfolio-link {
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
+}
+.logo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logo-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover .logo-img {
+  transform: scale(1.05);
+}
+.logo-link {
+  overflow: visible;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
