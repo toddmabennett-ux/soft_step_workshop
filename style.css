@@ -12,17 +12,18 @@ body {
   max-width: 400px;
   height: auto;
   display: block;
-  margin-top: -35px;
-  margin-bottom: -75px;
+  margin: 0 auto;
+  margin-top: 4px;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
+  align-items: center;
 }
 
 .softstep-header {
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
   background: linear-gradient(180deg, #fadadd 0%, #faf0e6 40%, #f6f1e7 100%);
   width: 100%;
@@ -30,13 +31,12 @@ body {
   top: 0;
   z-index: 1000;
 }
-
 .header-container {
   max-width: none;
   width: 100%;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -46,6 +46,9 @@ body {
   gap: 15px;
   margin-right: 40px;
 }
+.notebook-intro {
+  text-align: center;
+}
 
 /* Notebook layout Section Flex System */
 .notebook-section {
@@ -54,83 +57,6 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 40px 0 80px 0;
-}
-
-/* Floating Capsule Banner Track Block (Unstuck & Mobile Fixed) */
-.section-space {
-  max-width: 940px;
-  width: 90%;
-  margin: 20px auto 40px auto;
-  background: #ffffff;
-  border-radius: 50px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: auto;
-  z-index: 10;
-  box-sizing: border-box;
-}
-
-/* Full Width Button Anchor Link Zone */
-.nav-btn-design {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  height: 85px;
-  text-decoration: none;
-  color: #333;
-  transition: background-color 0.3s ease;
-}
-
-.nav-btn-design:hover {
-  background-color: #fafbf9;
-}
-
-/* Cookie Cutter circular crop tool layer */
-.nav-motif-crop {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: #faf0e6;
-}
-
-.nav-motif-img {
-  width: 140%;
-  height: auto;
-  transform: translateY(-3px);
-}
-
-/* Typography Stack Alignment rules */
-.nav-design-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-  text-align: left;
-}
-
-.nav-design-title {
-  font-size: 1.25rem;
-  font-style: italic;
-  font-weight: 500;
-  color: #7fa475;
-  font-family: "Cormorant Garamond", serif;
-}
-
-.nav-design-subtitle {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: #dfb26c;
-  margin-top: 2px;
 }
 
 /* Product Cards Grid Structure Layout */
@@ -219,6 +145,7 @@ body {
   padding: 40px 20px;
   background-color: #faf0e6;
   font-family: "Cormorant Garamond", serif;
+  margin-top: 60px;
 }
 
 .affiliate-disclaimer {
