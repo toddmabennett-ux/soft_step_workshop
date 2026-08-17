@@ -10,6 +10,7 @@ body {
 html,
 body {
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Master Sticky Header Layout */
@@ -189,39 +190,33 @@ body {
 .portfolio-grid {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  margin-top: 30px;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Each row */
-.portfolio-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  box-sizing: border-box;
-  width: 100%;
-  overflow: hidden;
-}
 
-/* Individual card */
-.portfolio-item {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 20px;
-  width: 240px; /* slightly bigger */
-  text-align: center;
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  max-width: 240px;
-  flex: 1 1 240px;
-}
 /* Hover lift */
 .portfolio-item:hover {
   transform: translateY(-6px);
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+.portfolio-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.portfolio-item {
+  flex: 1 1 280px;
+  max-width: 300px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* Image */
