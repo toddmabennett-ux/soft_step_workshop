@@ -290,6 +290,12 @@ body {
 }
 /* Mobile Fixes */
 @media (max-width: 768px) {
+  /* Stop horizontal overflow */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   /* Header + Logo */
   .logo {
     max-width: 260px;
@@ -310,6 +316,8 @@ body {
   .notebook-row {
     gap: 20px;
     padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .notebook-link {
@@ -324,11 +332,31 @@ body {
   .portfolio-row {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  .portfolio-item {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Images shrink properly */
+  .pyr-img,
+  .logo-img,
+  .notebook-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* Logo Grid */
   .logo-row {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
