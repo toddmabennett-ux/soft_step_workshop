@@ -7,6 +7,11 @@ body {
   padding: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Master Sticky Header Layout */
 .logo {
   max-width: 400px;
@@ -191,8 +196,12 @@ body {
 /* Each row */
 .portfolio-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Individual card */
@@ -206,6 +215,8 @@ body {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  max-width: 240px;
+  flex: 1 1 240px;
 }
 /* Hover lift */
 .portfolio-item:hover {
