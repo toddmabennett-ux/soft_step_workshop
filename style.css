@@ -289,7 +289,6 @@ body {
   color: inherit;
 }
 /* Mobile Fixes */
-/* Mobile Fixes */
 @media (max-width: 768px) {
   html,
   body {
@@ -375,5 +374,21 @@ body {
   .article-block {
     padding: 20px;
     width: 95%;
+  }
+  /* Footer Mobile Fix */
+  .softstep-footer {
+    margin-top: 40px; /* Reduces the massive desktop gap */
+    padding: 30px 15px;
+    width: 100%;
+    box-sizing: border-box; /* Forces padding to stay inside the screen width */
+    overflow: hidden; /* Hard stops any stealthy content spills */
+  }
+
+  .affiliate-disclaimer {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
   }
 }
