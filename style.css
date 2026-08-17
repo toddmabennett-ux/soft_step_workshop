@@ -289,57 +289,76 @@ body {
   color: inherit;
 }
 /* Mobile Fixes */
+/* Mobile Fixes */
 @media (max-width: 768px) {
-  /* Stop horizontal overflow */
   html,
   body {
     overflow-x: hidden;
+    position: relative;
   }
 
   /* Header + Logo */
   .logo {
-    max-width: 260px;
-    margin-top: 2px;
+    max-width: 80%;
+    height: auto;
+    margin: 5px auto;
   }
 
   .header-container {
     flex-direction: column;
-    gap: 10px;
+    padding: 10px;
+    gap: 15px;
   }
 
   .header-nav-links {
     margin-right: 0;
-    gap: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   /* Notebook Cards */
   .notebook-row {
-    gap: 20px;
-    padding: 0 10px;
-    width: 100%;
-    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 0 15px;
   }
 
   .notebook-link {
     max-width: 100%;
+    width: 100%;
   }
 
   .notebook-card {
     padding: 20px;
+    box-sizing: border-box;
   }
 
   /* Portfolio Pyramid */
   .portfolio-row {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 10px;
+    gap: 25px;
+    padding: 0 15px;
   }
 
   .portfolio-item {
+    flex: none; /* Crucial: stops desktop flex rules from forcing row squishing */
     max-width: 100%;
     width: 100%;
+  }
+
+  /* Logo Grid */
+  .logo-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo-item {
+    width: 100%;
+    max-width: 200px; /* Keeps logos from expanding into giants on mobile */
     box-sizing: border-box;
   }
 
@@ -347,16 +366,14 @@ body {
   .pyr-img,
   .logo-img,
   .notebook-image {
+    width: 100%;
     max-width: 100%;
     height: auto;
-    display: block;
   }
 
-  /* Logo Grid */
-  .logo-row {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+  /* Article Blocks */
+  .article-block {
+    padding: 20px;
+    width: 95%;
   }
 }
