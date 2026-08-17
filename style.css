@@ -27,8 +27,6 @@ body {
   margin: 0;
   background: linear-gradient(180deg, #fadadd 0%, #faf0e6 40%, #f6f1e7 100%);
   width: 100%;
-  position: sticky;
-  top: 0;
   z-index: 1000;
 }
 .header-container {
@@ -120,7 +118,6 @@ body {
   line-height: 1.6;
   font-size: 15px;
   color: #333333;
-  margin-top: auto; /* Pushes card text group uniformly below images */
 }
 
 .footer-instagram {
@@ -141,11 +138,14 @@ body {
 
 /* Footer Section */
 .softstep-footer {
+  display: block;
+  width: 100%;
+  clear: both;
   text-align: center;
   padding: 40px 20px;
   background-color: #faf0e6;
   font-family: "Cormorant Garamond", serif;
-  margin-top: 60px;
+  margin-top: 100px; /* pushes it down from the notebook cards */
 }
 
 .affiliate-disclaimer {
