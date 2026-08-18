@@ -391,4 +391,27 @@ body {
     box-sizing: border-box;
     font-size: 0.8rem;
   }
+  /* Unbunch the webpage sections */
+  .notebook-section {
+    margin: 40px 0 !important; /* Forces vertical breathing room between major sections */
+    gap: 30px !important;
+  }
+
+  .notebook-row,
+  .portfolio-row,
+  .logo-grid {
+    gap: 35px !important; /* Adds clear separation between the individual stacked items */
+  }
+
+  .notebook-link {
+    margin-bottom: 15px; /* Prevents cards from sitting right on top of each other */
+  }
+
+  .portfolio-item {
+    margin-bottom: 25px; /* Gives each portfolio piece space before the next one starts */
+  }
+
+  .article-block {
+    margin: 40px auto !important; /* Spaces out the text blocks cleanly */
+  }
 }
