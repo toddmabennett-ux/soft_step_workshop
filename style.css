@@ -1,4 +1,6 @@
-/* Base Layout Resets */
+/* ==========================================================================
+   1. Base Layout Resets & Fonts
+   ========================================================================== */
 body {
   background-color: ivory;
   color: #333333;
@@ -13,7 +15,15 @@ body {
   width: 100%;
 }
 
-/* Master Sticky Header Layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. Master Header Layout (Desktop First)
+   ========================================================================== */
 .logo {
   max-width: 400px;
   height: auto;
@@ -25,7 +35,6 @@ body {
 .logo-area {
   display: flex;
   align-items: center;
-  align-items: center;
 }
 
 .softstep-header {
@@ -35,6 +44,7 @@ body {
   width: 100%;
   z-index: 1000;
 }
+
 .header-container {
   max-width: none;
   width: 100%;
@@ -50,11 +60,14 @@ body {
   gap: 15px;
   margin-right: 40px;
 }
+
 .notebook-intro {
   text-align: center;
 }
 
-/* Notebook layout Section Flex System */
+/* ==========================================================================
+   3. Notebook Cards Section (Desktop First)
+   ========================================================================== */
 .notebook-section {
   width: 100%;
   display: flex;
@@ -63,7 +76,6 @@ body {
   margin: 40px 0 80px 0;
 }
 
-/* Product Cards Grid Structure Layout */
 .notebook-row {
   display: flex;
   justify-content: center;
@@ -72,9 +84,8 @@ body {
   max-width: 1020px;
   width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap; /* Allows row rows to drop cleanly when squeezed */
+  flex-wrap: wrap;
   padding: 0 20px;
-  box-sizing: border-box;
 }
 
 .notebook-link {
@@ -82,8 +93,7 @@ body {
   color: inherit;
   display: flex;
   width: 100%;
-  max-width: 300px; /* Constrains the max horizontal footprint of the row item */
-  box-sizing: border-box;
+  max-width: 300px;
 }
 
 .notebook-card {
@@ -94,23 +104,13 @@ body {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
   text-align: center;
   font-family: "Cormorant Garamond", serif;
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  box-sizing: border-box;
-  overflow: hidden; /* Prevents raw unscaled image data from spilling out */
+  overflow: hidden;
 }
 
-.notebook-link:hover .notebook-card {
-  transform: translateY(-8px);
-  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
-}
-
-/* FIXED: Rigidly forces the book graphics to stay bound inside their individual cards */
 .notebook-image {
   width: 100%;
   max-width: 100%;
@@ -123,6 +123,135 @@ body {
 .notebook-card p {
   line-height: 1.6;
   font-size: 15px;
+  color: #333333;
+}
+
+/* ==========================================================================
+   4. Portfolio Pyramid Grid & Logos (Desktop First)
+   ========================================================================== */
+.portfolio-grid,
+.logo-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.portfolio-row,
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.portfolio-item {
+  flex: 1 1 280px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.pyr-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+.pyr-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #7fa475;
+  margin: 0;
+  text-align: center;
+}
+
+.portfolio-link {
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.logo-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+}
+
+.logo-link {
+  overflow: visible;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   5. Clean Hardware Rendering Animation Layers (Removes Sub-Pixel Glitches)
+   ========================================================================== */
+.portfolio-item,
+.notebook-card,
+.logo-item {
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Container-only lift behavior ensures text and image borders remain crisp */
+.portfolio-item:hover,
+.logo-item:hover {
+  transform: translateY(-6px) scale(1.02) translateZ(0);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.notebook-link:hover .notebook-card {
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   6. General Article Blocks & Footer
+   ========================================================================== */
+.article-block {
+  max-width: 940px;
+  width: 90%;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  margin: 30px auto;
+}
+
+.article-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #7fa475;
+  margin-bottom: 15px;
+}
+
+.article-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: #333333;
 }
 
@@ -142,7 +271,6 @@ body {
   opacity: 1;
 }
 
-/* Footer Section */
 .softstep-footer {
   display: block;
   width: 100%;
@@ -151,7 +279,7 @@ body {
   padding: 40px 20px;
   background-color: #faf0e6;
   font-family: "Cormorant Garamond", serif;
-  margin-top: 100px; /* pushes it down from the notebook cards */
+  margin-top: 100px;
 }
 
 .affiliate-disclaimer {
@@ -161,145 +289,14 @@ body {
   margin: 10px auto 0 auto;
   line-height: 1.4;
 }
-.article-block {
-  max-width: 940px;
-  width: 90%;
-  background: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
-  padding: 40px;
-  margin: 30px auto;
-  box-sizing: border-box;
-}
 
-.article-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
-  font-style: italic;
-  color: #7fa475;
-  margin-bottom: 15px;
-}
-
-.article-text {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #333333;
-}
-/* Pyramid Grid */
-.portfolio-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Each row */
-
-/* Hover lift */
-.portfolio-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
-}
-.portfolio-row {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1000px;
-}
-
-.portfolio-item {
-  flex: 1 1 280px;
-  max-width: 300px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-/* Image */
-.pyr-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-}
-/* Image hover grow */
-.portfolio-item:hover .pyr-img {
-  transform: scale(1.03);
-}
-
-/* Title */
-.pyr-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.15rem;
-  font-style: italic;
-  color: #7fa475;
-  margin: 0;
-}
-.portfolio-link {
-  text-decoration: none !important;
-  color: inherit;
-  display: block;
-}
-.logo-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-top: 30px;
-}
-.logo-row {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.logo-item {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.logo-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.logo-img {
-  width: 120px;
-  height: auto;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.logo-item:hover .logo-img {
-  transform: scale(1.05);
-}
-.logo-link {
-  overflow: visible;
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-}
-/* Mobile Fixes */
+/* ==========================================================================
+   7. STABLE MOBILE MEDIA QUERY BLOCK
+   ========================================================================== */
 @media (max-width: 768px) {
-  html,
-  body {
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  /* Header + Logo */
+  /* Navigation Container Fixes */
   .logo {
     max-width: 80%;
-    height: auto;
     margin: 5px auto;
   }
 
@@ -316,102 +313,98 @@ body {
     justify-content: center;
   }
 
-  /* Notebook Cards */
+  /* Notebook Section Adjustments */
+  .notebook-section {
+    margin: 40px 0 !important;
+    gap: 30px !important;
+  }
+
   .notebook-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 0 15px;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 35px !important;
+    padding: 0 15px !important;
   }
 
   .notebook-link {
-    max-width: 100%;
-    width: 100%;
+    max-width: 75% !important; /* Limits card layout canvas footprint */
+    width: 100% !important;
+    margin-bottom: 15px;
   }
 
   .notebook-card {
     padding: 20px;
-    box-sizing: border-box;
+    text-align: center !important;
   }
 
-  /* Portfolio Pyramid */
-  .portfolio-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 0 15px;
-  }
-
-  .portfolio-item {
-    flex: none; /* Crucial: stops desktop flex rules from forcing row squishing */
-    max-width: 100%;
-    width: 100%;
-  }
-
-  /* Logo Grid */
-  .logo-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .logo-item {
-    width: 100%;
-    max-width: 200px; /* Keeps logos from expanding into giants on mobile */
-    box-sizing: border-box;
-  }
-
-  /* Images shrink properly */
-  .pyr-img,
-  .logo-img,
-  .notebook-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Article Blocks */
-  .article-block {
-    padding: 20px;
-    width: 95%;
-  }
-  /* Footer Mobile Fix */
-  .softstep-footer {
-    margin-top: 40px; /* Reduces the massive desktop gap */
-    padding: 30px 15px;
-    width: 100%;
-    box-sizing: border-box; /* Forces padding to stay inside the screen width */
-    overflow: hidden; /* Hard stops any stealthy content spills */
-  }
-
-  .affiliate-disclaimer {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
-    font-size: 0.8rem;
-  }
-  /* Unbunch the webpage sections */
-  .notebook-section {
-    margin: 40px 0 !important; /* Forces vertical breathing room between major sections */
+  /* Portfolio Grid System Stack Rules */
+  .portfolio-grid,
+  .logo-grid {
+    flex-direction: column !important;
     gap: 30px !important;
   }
 
-  .notebook-row,
   .portfolio-row,
-  .logo-grid {
-    gap: 35px !important; /* Adds clear separation between the individual stacked items */
-  }
-
-  .notebook-link {
-    margin-bottom: 15px; /* Prevents cards from sitting right on top of each other */
+  .logo-row {
+    flex-direction: column !important;
+    gap: 35px !important;
+    padding: 0 15px !important;
   }
 
   .portfolio-item {
-    margin-bottom: 25px; /* Gives each portfolio piece space before the next one starts */
+    flex: none !important;
+    max-width: 75% !important; /* Shrinks container down away from border edges */
+    width: 100% !important;
+    margin: 0 auto 25px auto !important;
+    text-align: center !important;
   }
 
+  .logo-item {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 180px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Structural Image Auto-Sizing */
+  .pyr-img,
+  .logo-img,
+  .notebook-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Typographic Centering Rules */
+  .pyr-title,
+  .portfolio-item p,
+  .notebook-card p {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+    padding: 0 5px !important;
+  }
+
+  /* Article Typography Adjustments */
   .article-block {
-    margin: 40px auto !important; /* Spaces out the text blocks cleanly */
+    padding: 20px;
+    width: 95% !important;
+    margin: 40px auto !important;
+  }
+
+  /* Contained Mobile Footer Mechanics */
+  .softstep-footer {
+    margin-top: 40px;
+    padding: 30px 15px;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+
+  .affiliate-disclaimer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    text-align: center !important;
   }
 }
