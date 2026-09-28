@@ -99,9 +99,8 @@ a {
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 600;
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
+  text-align: center;
+  transition: background-color 0.2s ease;
 }
 
 .btn-primary {
@@ -122,7 +121,13 @@ a {
   background-color: #d0d0d0;
 }
 
-/* Main Content Wrapper / Article Blocks */
+.btn-block {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Article Blocks */
 .article-block {
   max-width: 1100px;
   margin: 3rem auto;
@@ -145,33 +150,45 @@ a {
   max-width: 800px;
 }
 
-/* Journal Grid */
+/* Notebook / Journal Cards */
 .notebook-section {
   padding: 1rem 0;
 }
 
 .notebook-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
 .notebook-card {
   border: 1px solid #e2e2e2;
   border-radius: 6px;
-  padding: 1rem;
+  padding: 1.25rem;
   background-color: #ffffff;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .notebook-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-tag {
+  background-color: #2e7d32;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
 }
 
 .notebook-image {
@@ -181,57 +198,151 @@ a {
   margin-bottom: 0.75rem;
 }
 
-.price {
+.notebook-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #1b1b1b;
+}
+
+.card-desc {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Journal Pricing Display Block */
+.pricing-display {
+  background-color: #f8f9f8;
+  border: 1px solid #e2e8e2;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.single-price {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.single-price span {
+  font-weight: bold;
+  color: #1b1b1b;
+}
+
+.bundle-price {
+  font-size: 0.95rem;
   font-weight: bold;
   color: #2e7d32;
+}
+
+.bundle-price span {
+  font-size: 1.05rem;
+}
+
+.bundle-price small {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-left: 0.3rem;
+}
+
+/* Multi-Buy Discount Banner Widget */
+.multibuy-widget {
+  background-color: #ffffff;
+  border: 2px solid #2e7d32;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.widget-header {
+  font-size: 1.1rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tier-box {
+  background-color: #f4f6f4;
+  border: 1px solid #dcdcdc;
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-box.highlight {
+  background-color: #e8f5e9;
+  border-color: #2e7d32;
+  font-weight: bold;
+}
+
+.tier-box .qty {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tier-box .price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1b1b1b;
+}
+
+.tier-box small {
+  display: block;
+  font-size: 0.75rem;
+  color: #2e7d32;
+}
+
+.widget-footer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Premium / High-Value Singles Grid */
+.premium-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.premium-card {
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-card h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
-.notebook-card p {
-  font-size: 0.88rem;
+.premium-card p {
+  font-size: 0.9rem;
   color: #555;
+  margin-bottom: 1rem;
 }
 
-/* eBay Vault Section */
-.shop-vault {
-  background-color: #fafafa;
-  border: 1px solid #ebebeb;
-  padding: 2.5rem 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.vault-categories {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-}
-
-.vault-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  padding: 1.5rem;
-  border-radius: 6px;
-  flex: 1;
-  min-width: 250px;
-  max-width: 400px;
-}
-
-.vault-card h3 {
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-
-.vault-card p {
-  color: #666;
-  font-size: 0.95rem;
-}
-
-.vault-cta {
-  margin-top: 1.5rem;
+.price-range {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 1.2rem;
 }
 
 /* Web Design Portfolio Grid */
@@ -312,26 +423,10 @@ a {
   font-size: 0.9rem;
 }
 
-.footer-instagram {
-  display: inline-block;
-  margin: 1rem 0;
-}
-
-.insta-icon {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
-  transition: opacity 0.2s ease;
-}
-
-.insta-icon:hover {
-  opacity: 0.7;
-}
-
-.affiliate-disclaimer {
+.footer-tagline {
   max-width: 600px;
-  margin: 0 auto;
-  font-size: 0.8rem;
+  margin: 0.8rem auto 0 auto;
+  font-size: 0.85rem;
   color: #888888;
 }
 
