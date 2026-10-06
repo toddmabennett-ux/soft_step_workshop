@@ -404,6 +404,25 @@ a {
   border-radius: 4px;
   text-align: center;
   background-color: #fff;
+
+  /* Smooth animation transition on the card */
+  transition:
+    transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Pop the ENTIRE CARD on hover */
+.logo-item:hover {
+  transform: translateY(-5px) scale(1.03); /* Lifts up and grows slightly */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* Adds a floating shadow */
+  border-color: #ddd;
+}
+
+/* Card presses down slightly on click */
+.logo-item:active {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-img {
@@ -411,6 +430,8 @@ a {
   height: auto;
   max-height: 100px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Footer */
